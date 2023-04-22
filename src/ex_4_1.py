@@ -17,12 +17,13 @@ def num_shutdowns(logfile):
     """
     Your docstring here.  Replace the pass keyword below with your implementation.
     """
-    Shutdown_count=0
     with open(logfile, 'r') as fp:
+        Shutdown_count=0
         for line in fp:
-            if line.count("Shutdown"):
+            if line.count("Shutdown initiated"):
                 Shutdown_count += 1
     return Shutdown_count
+
 
 # >>>> The code below will call your function and print the results
 if __name__ == "__main__":
