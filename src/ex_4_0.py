@@ -13,14 +13,14 @@ def get_shutdown_events(logfile):
     """
     Your docstring here.  Replace the pass keyword below with your implementation
     """
-    listval=[]
     with open(logfile, 'r') as fp:
+    listval=[]
         lines = fp.readlines()
         for row in lines:   
-         if "Shutdown" in row:
+         if "Shutdown initiated" in row:
             listval.append(row.replace("\n",""))
     return listval
 
 # >>>> The code below will call your function and print the results
-if __name__ == "__main__":
+if _name_ == "_main_":
     print(f"{get_shutdown_events(FILENAME)=}")
